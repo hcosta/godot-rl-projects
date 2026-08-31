@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3mpcjnnwre4u"]
+
+[ext_resource type="Texture2D" uid="uid://cmxbiuwaiugxu" path="res://sprites/base.png" id="1_cpam1"]
+[ext_resource type="Texture2D" uid="uid://cw8oyagyw25e4" path="res://sprites/background-day.png" id="1_elmsr"]
+[ext_resource type="PackedScene" uid="uid://cu60qin3cmrpa" path="res://Target.tscn" id="1_p2xbp"]
+[ext_resource type="PackedScene" uid="uid://dcwp513435qgd" path="res://Player.tscn" id="1_t10hu"]
+[ext_resource type="Script" uid="uid://bhlyyfr0v7t1v" path="res://addons/godot_rl_agents/sync.gd" id="2_ydsxx"]
+[ext_resource type="Script" uid="uid://bet8jsj2g6i28" path="res://scripts/target_spwaner.gd" id="3_812r8"]
+[ext_resource type="PackedScene" uid="uid://bp5ntr2cveagg" path="res://StaticLimit.tscn" id="3_ydsxx"]
+
+[node name="AI_Lab_1" type="Node2D"]
+
+[node name="ParallaxBackground" type="Parallax2D" parent="."]
+scroll_offset = Vector2(0, -16)
+repeat_size = Vector2(288, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(144, 256)
+texture = ExtResource("1_elmsr")
+
+[node name="ParallaxBase" type="Parallax2D" parent="."]
+z_index = 2
+scroll_offset = Vector2(0, 1)
+repeat_size = Vector2(240, 0)
+autoscroll = Vector2(-200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBase"]
+position = Vector2(144, 455)
+texture = ExtResource("1_cpam1")
+
+[node name="TargetSpawner" type="Marker2D" parent="."]
+z_index = 1
+position = Vector2(320, 200)
+gizmo_extents = 20.0
+script = ExtResource("3_812r8")
+target_scene = ExtResource("1_p2xbp")
+
+[node name="Timer" type="Timer" parent="TargetSpawner"]
+autostart = true
+
+[node name="Player" parent="." instance=ExtResource("1_t10hu")]
+position = Vector2(46, 200)
+
+[node name="BotLimit" parent="." instance=ExtResource("3_ydsxx")]
+visible = false
+position = Vector2(144, 456)
+
+[node name="TopLimit" parent="." instance=ExtResource("3_ydsxx")]
+visible = false
+position = Vector2(144, -56)
+rotation = 3.1415927
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("2_ydsxx")
+control_mode = 2
+onnx_model_path = "model.onnx"
+metadata/_custom_type_script = "uid://bhlyyfr0v7t1v"
+
+[connection signal="timeout" from="TargetSpawner/Timer" to="TargetSpawner" method="_on_timer_timeout"]

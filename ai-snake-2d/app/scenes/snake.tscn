@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://btgppcqugx5ue"]
+
+[ext_resource type="Script" uid="uid://cjojlphxgki6b" path="res://scripts/snake.gd" id="1_a5f6l"]
+[ext_resource type="Texture2D" uid="uid://cg360hq1yk4vw" path="res://assets/apple.png" id="1_kc3sr"]
+[ext_resource type="Texture2D" uid="uid://fgvgspxjg4ex" path="res://assets/body_bottomleft.png" id="2_wk5vo"]
+[ext_resource type="Texture2D" uid="uid://cr0yg76bqmwtt" path="res://assets/head_up.png" id="3_nir8i"]
+[ext_resource type="Texture2D" uid="uid://ctcymv5r1c4m7" path="res://assets/tail_down.png" id="4_jo4bi"]
+[ext_resource type="Texture2D" uid="uid://26y74ec4gk86" path="res://assets/tail_left.png" id="5_b4a37"]
+[ext_resource type="Texture2D" uid="uid://ckvwbqigjck31" path="res://assets/tail_right.png" id="6_soagx"]
+[ext_resource type="Texture2D" uid="uid://73yxawn8svl8" path="res://assets/tail_up.png" id="7_cju66"]
+[ext_resource type="Texture2D" uid="uid://c311npp4sxwro" path="res://assets/body_bottomright.png" id="8_voxme"]
+[ext_resource type="Texture2D" uid="uid://cojdnfqlcol8j" path="res://assets/body_horizontal.png" id="9_oiniw"]
+[ext_resource type="Texture2D" uid="uid://coxwm4lw43ohm" path="res://assets/body_topleft.png" id="10_1km24"]
+[ext_resource type="Texture2D" uid="uid://ccli1a6w38g46" path="res://assets/body_topright.png" id="11_3tt44"]
+[ext_resource type="Texture2D" uid="uid://bv0t7xdgyml37" path="res://assets/body_vertical.png" id="12_quytd"]
+[ext_resource type="Texture2D" uid="uid://db7l18j1hl53b" path="res://assets/head_down.png" id="13_bxyko"]
+[ext_resource type="Texture2D" uid="uid://bg85cp6t6qfkh" path="res://assets/head_left.png" id="14_l6aaa"]
+[ext_resource type="Texture2D" uid="uid://brmmegd31ukxy" path="res://assets/head_right.png" id="15_20xns"]
+[ext_resource type="Script" uid="uid://c75knayq2htq8" path="res://scripts/ai_controller_2d.gd" id="17_wk5vo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a1s7b"]
+texture = ExtResource("1_kc3sr")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5mcd"]
+texture = ExtResource("2_wk5vo")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hohrr"]
+texture = ExtResource("3_nir8i")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnyue"]
+texture = ExtResource("4_jo4bi")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecbyy"]
+texture = ExtResource("5_b4a37")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0nm7c"]
+texture = ExtResource("6_soagx")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tntcg"]
+texture = ExtResource("7_cju66")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_br4qt"]
+texture = ExtResource("8_voxme")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcna7"]
+texture = ExtResource("9_oiniw")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uj5nk"]
+texture = ExtResource("10_1km24")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qf7ru"]
+texture = ExtResource("11_3tt44")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sq6sl"]
+texture = ExtResource("12_quytd")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sn0pa"]
+texture = ExtResource("13_bxyko")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqpjx"]
+texture = ExtResource("14_l6aaa")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5e56s"]
+texture = ExtResource("15_20xns")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lquwl"]
+tile_size = Vector2i(40, 40)
+sources/0 = SubResource("TileSetAtlasSource_a1s7b")
+sources/1 = SubResource("TileSetAtlasSource_p5mcd")
+sources/2 = SubResource("TileSetAtlasSource_br4qt")
+sources/3 = SubResource("TileSetAtlasSource_mcna7")
+sources/4 = SubResource("TileSetAtlasSource_uj5nk")
+sources/5 = SubResource("TileSetAtlasSource_qf7ru")
+sources/6 = SubResource("TileSetAtlasSource_sq6sl")
+sources/7 = SubResource("TileSetAtlasSource_sn0pa")
+sources/8 = SubResource("TileSetAtlasSource_tqpjx")
+sources/9 = SubResource("TileSetAtlasSource_5e56s")
+sources/10 = SubResource("TileSetAtlasSource_hohrr")
+sources/11 = SubResource("TileSetAtlasSource_xnyue")
+sources/12 = SubResource("TileSetAtlasSource_ecbyy")
+sources/13 = SubResource("TileSetAtlasSource_0nm7c")
+sources/14 = SubResource("TileSetAtlasSource_tntcg")
+
+[node name="Snake" type="TileMapLayer" unique_id=580183468]
+tile_map_data = PackedByteArray(0, 0, 8, 0, 8, 0, 9, 0, 0, 0, 0, 0, 0, 0, 7, 0, 8, 0, 3, 0, 0, 0, 0, 0, 0, 0, 6, 0, 8, 0, 12, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_lquwl")
+script = ExtResource("1_a5f6l")
+
+[node name="AIController2D" type="Node2D" parent="." unique_id=39996823]
+script = ExtResource("17_wk5vo")
+reset_after = 9999999
+metadata/_custom_type_script = "uid://cvlr4bttjv6u5"

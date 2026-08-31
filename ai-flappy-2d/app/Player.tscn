@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcwp513435qgd"]
+
+[ext_resource type="Script" uid="uid://berqpd0ud5joe" path="res://scripts/player.gd" id="1_kne1u"]
+[ext_resource type="Texture2D" uid="uid://bf63850j05p7u" path="res://sprites/yellowbird-midflap.png" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://bsr2cy1ggjdpa" path="res://scripts/ai_controller_2d.gd" id="3_kne1u"]
+[ext_resource type="Script" uid="uid://di07gksi5filk" path="res://addons/godot_rl_agents/sensors/sensors_2d/RaycastSensor2D.gd" id="4_e80uo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpjcp"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_kne1u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xhfnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kpjcp")
+
+[node name="AIController2D" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_kne1u")
+reset_after = 9999999
+metadata/_custom_type_script = "uid://cee0kkxy504uj"
+
+[node name="RaycastSensor2D" type="Node2D" parent="."]
+script = ExtResource("4_e80uo")
+n_rays = 64.0
+ray_length = 360
+cone_width = 270.0
+metadata/_custom_type_script = "uid://di07gksi5filk"

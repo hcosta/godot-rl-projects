@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2fqy1vb4dehx"]
+
+[ext_resource type="Script" uid="uid://cm43lu1hi343s" path="res://addons/godot_rl_agents/sync.gd" id="1_twufi"]
+[ext_resource type="PackedScene" uid="uid://duk8jry8o2h0h" path="res://scenes/main.tscn" id="2_ker1x"]
+
+[node name="TrainingArena" type="Node2D" unique_id=1901595284]
+
+[node name="Main" parent="." unique_id=898505138 instance=ExtResource("2_ker1x")]
+
+[node name="Sync" type="Node" parent="." unique_id=352290033 groups=["sync"]]
+script = ExtResource("1_twufi")
+control_mode = 0
+action_repeat = 1
+onnx_model_path = "model.onnx"
+metadata/_custom_type_script = "uid://cm43lu1hi343s"

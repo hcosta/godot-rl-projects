@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dqsxcuqujgpeg"]
+
+[ext_resource type="Script" uid="uid://btpuwdw7cqdrh" path="res://scripts/car.gd" id="1_ys5ts"]
+[ext_resource type="Texture2D" uid="uid://dy20wm2en0x62" path="res://assets/Cars/car_black_3.png" id="2_ys5ts"]
+[ext_resource type="Script" uid="uid://demcunfvlmlky" path="res://addons/godot_rl_agents/sensors/sensors_2d/RaycastSensor2D.gd" id="3_qn377"]
+[ext_resource type="Script" uid="uid://bfoe4vky7sogl" path="res://scripts/ai_controller_2d.gd" id="4_fbyd5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qn377"]
+radius = 24.0
+height = 116.0
+
+[node name="Car" type="CharacterBody2D" unique_id=1925492074]
+script = ExtResource("1_ys5ts")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1656836332]
+rotation = 1.5707964
+texture = ExtResource("2_ys5ts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1385905119]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qn377")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=327289598]
+enabled = false
+zoom = Vector2(0.5, 0.5)
+
+[node name="RaycastSensor2D" type="Node2D" parent="." unique_id=347979075]
+script = ExtResource("3_qn377")
+ray_length = 350
+cone_width = 150.0
+debug_draw = true
+metadata/_custom_type_script = "uid://demcunfvlmlky"
+
+[node name="node_0_0" type="RayCast2D" parent="RaycastSensor2D" unique_id=1028170073]
+target_position = Vector2(117.911446, -329.54044)
+
+[node name="node_1_0" type="RayCast2D" parent="RaycastSensor2D" unique_id=2070537454]
+target_position = Vector2(170.01718, -305.9316)
+
+[node name="node_2_0" type="RayCast2D" parent="RaycastSensor2D" unique_id=1972210579]
+target_position = Vector2(217.5812, -274.15036)
+
+[node name="node_3_0" type="RayCast2D" parent="RaycastSensor2D" unique_id=117273181]
+target_position = Vector2(259.3329, -235.04564)
+
+[node name="node_4_0" type="RayCast2D" parent="RaycastSensor2D" unique_id=1831766228]
+target_position = Vector2(294.15695, -189.66205)
+
+[node name="node_5_1" type="RayCast2D" parent="RaycastSensor2D" unique_id=1377376433]
+target_position = Vector2(321.12308, -139.21196)
+
+[node name="node_6_1" type="RayCast2D" parent="RaycastSensor2D" unique_id=534584451]
+target_position = Vector2(339.51093, -85.04306)
+
+[node name="node_7_0" type="RayCast2D" parent="RaycastSensor2D" unique_id=1202054746]
+target_position = Vector2(348.82935, -28.602375)
+
+[node name="node_8_0" type="RayCast2D" parent="RaycastSensor2D" unique_id=302247722]
+target_position = Vector2(348.82935, 28.602375)
+
+[node name="node_9_0" type="RayCast2D" parent="RaycastSensor2D" unique_id=844439618]
+target_position = Vector2(339.51093, 85.04306)
+
+[node name="node_10_0" type="RayCast2D" parent="RaycastSensor2D" unique_id=199144025]
+target_position = Vector2(321.12308, 139.21196)
+
+[node name="node_11_1" type="RayCast2D" parent="RaycastSensor2D" unique_id=2117351778]
+target_position = Vector2(294.15695, 189.66205)
+
+[node name="node_12_1" type="RayCast2D" parent="RaycastSensor2D" unique_id=1822468861]
+target_position = Vector2(259.3329, 235.04564)
+
+[node name="node_13_1" type="RayCast2D" parent="RaycastSensor2D" unique_id=1674276925]
+target_position = Vector2(217.5812, 274.15036)
+
+[node name="node_14_1" type="RayCast2D" parent="RaycastSensor2D" unique_id=1900217276]
+target_position = Vector2(170.01718, 305.9316)
+
+[node name="node_15_1" type="RayCast2D" parent="RaycastSensor2D" unique_id=341497647]
+target_position = Vector2(117.911446, 329.54044)
+
+[node name="RaycastSensor2D2" type="Node2D" parent="." unique_id=831200324]
+visible = false
+rotation = 3.1415927
+script = ExtResource("3_qn377")
+n_rays = 7.0
+ray_length = 150
+cone_width = 180.0
+debug_draw = true
+metadata/_custom_type_script = "uid://demcunfvlmlky"
+
+[node name="node_0_0" type="RayCast2D" parent="RaycastSensor2D2" unique_id=627139780]
+target_position = Vector2(33.37814, -146.23918)
+
+[node name="node_1_0" type="RayCast2D" parent="RaycastSensor2D2" unique_id=430726765]
+target_position = Vector2(93.52347, -117.27472)
+
+[node name="node_2_0" type="RayCast2D" parent="RaycastSensor2D2" unique_id=1645722040]
+target_position = Vector2(135.14532, -65.08256)
+
+[node name="node_3_0" type="RayCast2D" parent="RaycastSensor2D2" unique_id=1848335221]
+target_position = Vector2(150, 0)
+
+[node name="node_4_0" type="RayCast2D" parent="RaycastSensor2D2" unique_id=414402295]
+target_position = Vector2(135.14532, 65.08256)
+
+[node name="node_5_0" type="RayCast2D" parent="RaycastSensor2D2" unique_id=2099288614]
+target_position = Vector2(93.52347, 117.27472)
+
+[node name="node_6_1" type="RayCast2D" parent="RaycastSensor2D2" unique_id=2029395549]
+target_position = Vector2(33.37814, 146.23918)
+
+[node name="AIController2D" type="Node2D" parent="." unique_id=1988280021]
+script = ExtResource("4_fbyd5")
+metadata/_custom_type_script = "uid://bj5s6xwn7l8xx"
