@@ -1,4 +1,4 @@
-https://raw.githubusercontent.com/hcosta/godot-rl-projects/ai-snake-2d/assets/ai-snake-2d.mp4
+https://github.com/hcosta/godot-rl-projects/raw/refs/heads/main/ai-snake-2d/assets/ai-snake-2d.webm
 
 ## Training
 

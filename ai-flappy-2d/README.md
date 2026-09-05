@@ -1,1 +1,1 @@
-https://github.com/hcosta/godot-rl-projects/raw/refs/heads/main/ai-cars-2d/assets/ai-cars-2d.mp4
+https://github.com/hcosta/godot-rl-projects/raw/refs/heads/main/ai-cars-2d/assets/ai-cars-2d.webm
