@@ -1,3 +1,1 @@
-<video src="assets/ai-cars-2d.mp4" controls width="100%">
-  Tu navegador no soporta la reproducción de video.
-</video>
+https://github.com/hcosta/godot-rl-projects/raw/refs/heads/main/ai-cars-2d/assets/ai-cars-2d.mp4

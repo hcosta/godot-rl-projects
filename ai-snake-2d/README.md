@@ -1,6 +1,4 @@
-<video src="assets/ai-snake-2d.mp4" controls width="100%">
-  Tu navegador no soporta la reproducción de video.
-</video>
+https://github.com/hcosta/godot-rl-projects/raw/refs/heads/main/ai-snake-2d/assets/ai-snake-2d.mp4
 
 ## Training
 
